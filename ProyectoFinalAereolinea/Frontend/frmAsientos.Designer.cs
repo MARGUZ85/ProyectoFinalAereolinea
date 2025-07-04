@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtgAsientos = new System.Windows.Forms.DataGridView();
             this.cboDestinoFinal = new System.Windows.Forms.ComboBox();
             this.dtpSalida = new System.Windows.Forms.DateTimePicker();
             this.btnSiguiente = new System.Windows.Forms.Button();
@@ -50,6 +49,18 @@
             this.cboHoraRegreso = new System.Windows.Forms.ComboBox();
             this.cboOrigen = new System.Windows.Forms.ComboBox();
             this.panelRegreso = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnBebeMasRegreso = new System.Windows.Forms.Button();
+            this.btnBebeMenosRegreso = new System.Windows.Forms.Button();
+            this.btnMenoresMasRegreso = new System.Windows.Forms.Button();
+            this.btnMenoresMenosRegreso = new System.Windows.Forms.Button();
+            this.btnAdultoMasRegreso = new System.Windows.Forms.Button();
+            this.btnAdultoMenosRegreso = new System.Windows.Forms.Button();
+            this.lblMenoresRegreso = new System.Windows.Forms.Label();
+            this.lblBebesRegreso = new System.Windows.Forms.Label();
+            this.lblAdultosRegreso = new System.Windows.Forms.Label();
             this.lblAdultos = new System.Windows.Forms.Label();
             this.lblBebes = new System.Windows.Forms.Label();
             this.lblMenores = new System.Windows.Forms.Label();
@@ -62,36 +73,22 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgAsientos)).BeginInit();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dtgAsientos = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dtgAsientosRegreso = new System.Windows.Forms.DataGridView();
             this.panelRegreso.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAsientos)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAsientosRegreso)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dtgAsientos
-            // 
-            this.dtgAsientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgAsientos.Location = new System.Drawing.Point(589, 122);
-            this.dtgAsientos.Name = "dtgAsientos";
-            this.dtgAsientos.RowHeadersWidth = 51;
-            this.dtgAsientos.RowTemplate.Height = 24;
-            this.dtgAsientos.Size = new System.Drawing.Size(531, 584);
-            this.dtgAsientos.TabIndex = 0;
-            this.dtgAsientos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAsientos_CellContentClick);
             // 
             // cboDestinoFinal
             // 
-            this.cboDestinoFinal.Font = new System.Drawing.Font("New Gulim", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDestinoFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDestinoFinal.FormattingEnabled = true;
             this.cboDestinoFinal.Items.AddRange(new object[] {
             "Aguascalientes",
@@ -126,13 +123,13 @@
             "Zacatecas"});
             this.cboDestinoFinal.Location = new System.Drawing.Point(236, 137);
             this.cboDestinoFinal.Name = "cboDestinoFinal";
-            this.cboDestinoFinal.Size = new System.Drawing.Size(264, 31);
+            this.cboDestinoFinal.Size = new System.Drawing.Size(264, 37);
             this.cboDestinoFinal.TabIndex = 3;
             this.cboDestinoFinal.SelectedIndexChanged += new System.EventHandler(this.cboDestinoFinal_SelectedIndexChanged);
             // 
             // dtpSalida
             // 
-            this.dtpSalida.Font = new System.Drawing.Font("New Gulim", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpSalida.Location = new System.Drawing.Point(18, 233);
             this.dtpSalida.Name = "dtpSalida";
             this.dtpSalida.Size = new System.Drawing.Size(246, 28);
@@ -153,60 +150,60 @@
             // lblOrigen
             // 
             this.lblOrigen.AutoSize = true;
-            this.lblOrigen.Font = new System.Drawing.Font("New Gulim", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrigen.Location = new System.Drawing.Point(31, 111);
             this.lblOrigen.Name = "lblOrigen";
-            this.lblOrigen.Size = new System.Drawing.Size(82, 23);
+            this.lblOrigen.Size = new System.Drawing.Size(100, 29);
             this.lblOrigen.TabIndex = 16;
             this.lblOrigen.Text = "Origen:";
             // 
             // lblDestino
             // 
             this.lblDestino.AutoSize = true;
-            this.lblDestino.Font = new System.Drawing.Font("New Gulim", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDestino.Location = new System.Drawing.Point(318, 111);
             this.lblDestino.Name = "lblDestino";
-            this.lblDestino.Size = new System.Drawing.Size(148, 23);
+            this.lblDestino.Size = new System.Drawing.Size(174, 29);
             this.lblDestino.TabIndex = 17;
             this.lblDestino.Text = "Destino Final:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("New Gulim", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(14, 196);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(180, 23);
+            this.label9.Size = new System.Drawing.Size(213, 29);
             this.label9.TabIndex = 18;
             this.label9.Text = "Fecha De Salida:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("New Gulim", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(161, 161);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(184, 23);
+            this.label10.Size = new System.Drawing.Size(220, 29);
             this.label10.TabIndex = 19;
             this.label10.Text = "Hora de Regreso:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("New Gulim", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(676, 32);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 28);
+            this.label4.Size = new System.Drawing.Size(156, 32);
             this.label4.TabIndex = 21;
             this.label4.Text = "ASIENTOS";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("New Gulim", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(182, 37);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(218, 28);
+            this.label7.Size = new System.Drawing.Size(215, 32);
             this.label7.TabIndex = 22;
             this.label7.Text = "Datos del Vuelo";
             // 
@@ -224,36 +221,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("New Gulim", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(76, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 23);
+            this.label1.Size = new System.Drawing.Size(239, 29);
             this.label1.TabIndex = 29;
             this.label1.Text = "Fecha De Regreso:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("New Gulim", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(326, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 23);
+            this.label2.Size = new System.Drawing.Size(174, 29);
             this.label2.TabIndex = 28;
             this.label2.Text = "Destino Final:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("New Gulim", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(86, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 23);
+            this.label3.Size = new System.Drawing.Size(100, 29);
             this.label3.TabIndex = 27;
             this.label3.Text = "Origen:";
             // 
             // dtpRegreso
             // 
-            this.dtpRegreso.Font = new System.Drawing.Font("New Gulim", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpRegreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpRegreso.Location = new System.Drawing.Point(67, 113);
             this.dtpRegreso.Name = "dtpRegreso";
             this.dtpRegreso.Size = new System.Drawing.Size(361, 34);
@@ -262,7 +259,7 @@
             // 
             // cboRegresoDestinofinal
             // 
-            this.cboRegresoDestinofinal.Font = new System.Drawing.Font("New Gulim", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRegresoDestinofinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRegresoDestinofinal.FormattingEnabled = true;
             this.cboRegresoDestinofinal.Items.AddRange(new object[] {
             "Aguascalientes",
@@ -297,13 +294,13 @@
             "Zacatecas"});
             this.cboRegresoDestinofinal.Location = new System.Drawing.Point(303, 42);
             this.cboRegresoDestinofinal.Name = "cboRegresoDestinofinal";
-            this.cboRegresoDestinofinal.Size = new System.Drawing.Size(194, 31);
+            this.cboRegresoDestinofinal.Size = new System.Drawing.Size(194, 37);
             this.cboRegresoDestinofinal.TabIndex = 25;
             this.cboRegresoDestinofinal.SelectedIndexChanged += new System.EventHandler(this.cboRegresoDestinofinal_SelectedIndexChanged);
             // 
             // cboRegresoOrigen
             // 
-            this.cboRegresoOrigen.Font = new System.Drawing.Font("New Gulim", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRegresoOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRegresoOrigen.FormattingEnabled = true;
             this.cboRegresoOrigen.Items.AddRange(new object[] {
             "Aguascalientes",
@@ -338,23 +335,26 @@
             "Zacatecas"});
             this.cboRegresoOrigen.Location = new System.Drawing.Point(32, 42);
             this.cboRegresoOrigen.Name = "cboRegresoOrigen";
-            this.cboRegresoOrigen.Size = new System.Drawing.Size(194, 31);
+            this.cboRegresoOrigen.Size = new System.Drawing.Size(194, 37);
             this.cboRegresoOrigen.TabIndex = 24;
             this.cboRegresoOrigen.SelectedIndexChanged += new System.EventHandler(this.cboRegresoOrigen_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("New Gulim", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(315, 196);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 23);
+            this.label5.Size = new System.Drawing.Size(194, 29);
             this.label5.TabIndex = 31;
             this.label5.Text = "Hora de Salida:";
             // 
             // cboHoraSalida
             // 
             this.cboHoraSalida.FormattingEnabled = true;
+            this.cboHoraSalida.Items.AddRange(new object[] {
+            "9:00 am",
+            "11:00 am"});
             this.cboHoraSalida.Location = new System.Drawing.Point(284, 233);
             this.cboHoraSalida.Name = "cboHoraSalida";
             this.cboHoraSalida.Size = new System.Drawing.Size(249, 24);
@@ -364,6 +364,9 @@
             // cboHoraRegreso
             // 
             this.cboHoraRegreso.FormattingEnabled = true;
+            this.cboHoraRegreso.Items.AddRange(new object[] {
+            "9:00 am",
+            "10:00 am"});
             this.cboHoraRegreso.Location = new System.Drawing.Point(108, 187);
             this.cboHoraRegreso.Name = "cboHoraRegreso";
             this.cboHoraRegreso.Size = new System.Drawing.Size(249, 24);
@@ -372,7 +375,7 @@
             // 
             // cboOrigen
             // 
-            this.cboOrigen.Font = new System.Drawing.Font("New Gulim", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboOrigen.FormattingEnabled = true;
             this.cboOrigen.Items.AddRange(new object[] {
             "Aguascalientes",
@@ -407,7 +410,7 @@
             "Zacatecas"});
             this.cboOrigen.Location = new System.Drawing.Point(12, 137);
             this.cboOrigen.Name = "cboOrigen";
-            this.cboOrigen.Size = new System.Drawing.Size(194, 31);
+            this.cboOrigen.Size = new System.Drawing.Size(194, 37);
             this.cboOrigen.TabIndex = 34;
             this.cboOrigen.SelectedIndexChanged += new System.EventHandler(this.cboOrigen_SelectedIndexChanged);
             // 
@@ -416,15 +419,15 @@
             this.panelRegreso.Controls.Add(this.label12);
             this.panelRegreso.Controls.Add(this.label13);
             this.panelRegreso.Controls.Add(this.label14);
-            this.panelRegreso.Controls.Add(this.button1);
-            this.panelRegreso.Controls.Add(this.button2);
-            this.panelRegreso.Controls.Add(this.button3);
-            this.panelRegreso.Controls.Add(this.button4);
-            this.panelRegreso.Controls.Add(this.button5);
-            this.panelRegreso.Controls.Add(this.button6);
-            this.panelRegreso.Controls.Add(this.label15);
-            this.panelRegreso.Controls.Add(this.label16);
-            this.panelRegreso.Controls.Add(this.label17);
+            this.panelRegreso.Controls.Add(this.btnBebeMasRegreso);
+            this.panelRegreso.Controls.Add(this.btnBebeMenosRegreso);
+            this.panelRegreso.Controls.Add(this.btnMenoresMasRegreso);
+            this.panelRegreso.Controls.Add(this.btnMenoresMenosRegreso);
+            this.panelRegreso.Controls.Add(this.btnAdultoMasRegreso);
+            this.panelRegreso.Controls.Add(this.btnAdultoMenosRegreso);
+            this.panelRegreso.Controls.Add(this.lblMenoresRegreso);
+            this.panelRegreso.Controls.Add(this.lblBebesRegreso);
+            this.panelRegreso.Controls.Add(this.lblAdultosRegreso);
             this.panelRegreso.Controls.Add(this.label10);
             this.panelRegreso.Controls.Add(this.dtpRegreso);
             this.panelRegreso.Controls.Add(this.label2);
@@ -439,6 +442,120 @@
             this.panelRegreso.TabIndex = 35;
             this.panelRegreso.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRegreso_Paint);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(225, 224);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(60, 16);
+            this.label12.TabIndex = 59;
+            this.label12.Text = "Menores";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(424, 222);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(47, 16);
+            this.label13.TabIndex = 58;
+            this.label13.Text = "Bebés";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(60, 224);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 16);
+            this.label14.TabIndex = 57;
+            this.label14.Text = "Adultos";
+            // 
+            // btnBebeMasRegreso
+            // 
+            this.btnBebeMasRegreso.Location = new System.Drawing.Point(483, 240);
+            this.btnBebeMasRegreso.Name = "btnBebeMasRegreso";
+            this.btnBebeMasRegreso.Size = new System.Drawing.Size(55, 23);
+            this.btnBebeMasRegreso.TabIndex = 56;
+            this.btnBebeMasRegreso.Text = "+";
+            this.btnBebeMasRegreso.UseVisualStyleBackColor = true;
+            this.btnBebeMasRegreso.Click += new System.EventHandler(this.btnBebeMasRegreso_Click_1);
+            // 
+            // btnBebeMenosRegreso
+            // 
+            this.btnBebeMenosRegreso.Location = new System.Drawing.Point(361, 242);
+            this.btnBebeMenosRegreso.Name = "btnBebeMenosRegreso";
+            this.btnBebeMenosRegreso.Size = new System.Drawing.Size(55, 23);
+            this.btnBebeMenosRegreso.TabIndex = 55;
+            this.btnBebeMenosRegreso.Text = "-";
+            this.btnBebeMenosRegreso.UseVisualStyleBackColor = true;
+            this.btnBebeMenosRegreso.Click += new System.EventHandler(this.btnBebeMenosRegreso_Click_1);
+            // 
+            // btnMenoresMasRegreso
+            // 
+            this.btnMenoresMasRegreso.Location = new System.Drawing.Point(291, 242);
+            this.btnMenoresMasRegreso.Name = "btnMenoresMasRegreso";
+            this.btnMenoresMasRegreso.Size = new System.Drawing.Size(50, 23);
+            this.btnMenoresMasRegreso.TabIndex = 54;
+            this.btnMenoresMasRegreso.Text = "+";
+            this.btnMenoresMasRegreso.UseVisualStyleBackColor = true;
+            this.btnMenoresMasRegreso.Click += new System.EventHandler(this.btnMenoresMasRegreso_Click_1);
+            // 
+            // btnMenoresMenosRegreso
+            // 
+            this.btnMenoresMenosRegreso.Location = new System.Drawing.Point(170, 243);
+            this.btnMenoresMenosRegreso.Name = "btnMenoresMenosRegreso";
+            this.btnMenoresMenosRegreso.Size = new System.Drawing.Size(49, 24);
+            this.btnMenoresMenosRegreso.TabIndex = 53;
+            this.btnMenoresMenosRegreso.Text = "-";
+            this.btnMenoresMenosRegreso.UseVisualStyleBackColor = true;
+            this.btnMenoresMenosRegreso.Click += new System.EventHandler(this.btnMenoresMenosRegreso_Click_1);
+            // 
+            // btnAdultoMasRegreso
+            // 
+            this.btnAdultoMasRegreso.Location = new System.Drawing.Point(111, 243);
+            this.btnAdultoMasRegreso.Name = "btnAdultoMasRegreso";
+            this.btnAdultoMasRegreso.Size = new System.Drawing.Size(55, 23);
+            this.btnAdultoMasRegreso.TabIndex = 52;
+            this.btnAdultoMasRegreso.Text = "+";
+            this.btnAdultoMasRegreso.UseVisualStyleBackColor = true;
+            this.btnAdultoMasRegreso.Click += new System.EventHandler(this.btnAdultoMasRegreso_Click_1);
+            // 
+            // btnAdultoMenosRegreso
+            // 
+            this.btnAdultoMenosRegreso.Location = new System.Drawing.Point(17, 245);
+            this.btnAdultoMenosRegreso.Name = "btnAdultoMenosRegreso";
+            this.btnAdultoMenosRegreso.Size = new System.Drawing.Size(37, 20);
+            this.btnAdultoMenosRegreso.TabIndex = 51;
+            this.btnAdultoMenosRegreso.Text = "-";
+            this.btnAdultoMenosRegreso.UseVisualStyleBackColor = true;
+            this.btnAdultoMenosRegreso.Click += new System.EventHandler(this.btnAdultoMenosRegreso_Click_1);
+            // 
+            // lblMenoresRegreso
+            // 
+            this.lblMenoresRegreso.AutoSize = true;
+            this.lblMenoresRegreso.Location = new System.Drawing.Point(225, 247);
+            this.lblMenoresRegreso.Name = "lblMenoresRegreso";
+            this.lblMenoresRegreso.Size = new System.Drawing.Size(14, 16);
+            this.lblMenoresRegreso.TabIndex = 50;
+            this.lblMenoresRegreso.Text = "0";
+            // 
+            // lblBebesRegreso
+            // 
+            this.lblBebesRegreso.AutoSize = true;
+            this.lblBebesRegreso.Location = new System.Drawing.Point(424, 245);
+            this.lblBebesRegreso.Name = "lblBebesRegreso";
+            this.lblBebesRegreso.Size = new System.Drawing.Size(14, 16);
+            this.lblBebesRegreso.TabIndex = 49;
+            this.lblBebesRegreso.Text = "0";
+            // 
+            // lblAdultosRegreso
+            // 
+            this.lblAdultosRegreso.AutoSize = true;
+            this.lblAdultosRegreso.Location = new System.Drawing.Point(60, 247);
+            this.lblAdultosRegreso.Name = "lblAdultosRegreso";
+            this.lblAdultosRegreso.Size = new System.Drawing.Size(14, 16);
+            this.lblAdultosRegreso.TabIndex = 48;
+            this.lblAdultosRegreso.Text = "1";
+            // 
             // lblAdultos
             // 
             this.lblAdultos.AutoSize = true;
@@ -447,6 +564,7 @@
             this.lblAdultos.Size = new System.Drawing.Size(14, 16);
             this.lblAdultos.TabIndex = 36;
             this.lblAdultos.Text = "1";
+            this.lblAdultos.Click += new System.EventHandler(this.lblAdultos_Click);
             // 
             // lblBebes
             // 
@@ -465,6 +583,7 @@
             this.lblMenores.Size = new System.Drawing.Size(14, 16);
             this.lblMenores.TabIndex = 38;
             this.lblMenores.Text = "0";
+            this.lblMenores.Click += new System.EventHandler(this.lblMenores_Click);
             // 
             // btnAdultoMenos
             // 
@@ -553,113 +672,59 @@
             this.label11.TabIndex = 45;
             this.label11.Text = "Adultos";
             // 
-            // label12
+            // tabControl1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(225, 224);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 16);
-            this.label12.TabIndex = 59;
-            this.label12.Text = "Menores";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(638, 100);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(482, 602);
+            this.tabControl1.TabIndex = 48;
             // 
-            // label13
+            // tabPage1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(424, 222);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 16);
-            this.label13.TabIndex = 58;
-            this.label13.Text = "Bebés";
+            this.tabPage1.Controls.Add(this.dtgAsientos);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(474, 573);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Ida";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label14
+            // dtgAsientos
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(60, 224);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 16);
-            this.label14.TabIndex = 57;
-            this.label14.Text = "Adultos";
+            this.dtgAsientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgAsientos.Location = new System.Drawing.Point(7, 4);
+            this.dtgAsientos.Name = "dtgAsientos";
+            this.dtgAsientos.RowHeadersWidth = 51;
+            this.dtgAsientos.RowTemplate.Height = 24;
+            this.dtgAsientos.Size = new System.Drawing.Size(464, 563);
+            this.dtgAsientos.TabIndex = 0;
+            this.dtgAsientos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgAsientos_KeyDown);
             // 
-            // button1
+            // tabPage2
             // 
-            this.button1.Location = new System.Drawing.Point(483, 240);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 23);
-            this.button1.TabIndex = 56;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.dtgAsientosRegreso);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(474, 573);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Regreso";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // dtgAsientosRegreso
             // 
-            this.button2.Location = new System.Drawing.Point(361, 242);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 23);
-            this.button2.TabIndex = 55;
-            this.button2.Text = "-";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(291, 242);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 23);
-            this.button3.TabIndex = 54;
-            this.button3.Text = "+";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(170, 243);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(49, 24);
-            this.button4.TabIndex = 53;
-            this.button4.Text = "-";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(111, 243);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(55, 23);
-            this.button5.TabIndex = 52;
-            this.button5.Text = "+";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(17, 245);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(37, 20);
-            this.button6.TabIndex = 51;
-            this.button6.Text = "-";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(225, 247);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(14, 16);
-            this.label15.TabIndex = 50;
-            this.label15.Text = "0";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(424, 245);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(14, 16);
-            this.label16.TabIndex = 49;
-            this.label16.Text = "0";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(60, 247);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(14, 16);
-            this.label17.TabIndex = 48;
-            this.label17.Text = "1";
+            this.dtgAsientosRegreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgAsientosRegreso.Location = new System.Drawing.Point(3, 0);
+            this.dtgAsientosRegreso.Name = "dtgAsientosRegreso";
+            this.dtgAsientosRegreso.RowHeadersWidth = 51;
+            this.dtgAsientosRegreso.RowTemplate.Height = 24;
+            this.dtgAsientosRegreso.Size = new System.Drawing.Size(468, 570);
+            this.dtgAsientosRegreso.TabIndex = 0;
+            this.dtgAsientosRegreso.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgAsientosRegreso_KeyDown);
             // 
             // frmAsientos
             // 
@@ -667,6 +732,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1132, 784);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label11);
@@ -692,21 +758,22 @@
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.dtpSalida);
             this.Controls.Add(this.cboDestinoFinal);
-            this.Controls.Add(this.dtgAsientos);
             this.Name = "frmAsientos";
             this.Text = "frmAsientos";
             this.Load += new System.EventHandler(this.frmAsientos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgAsientos)).EndInit();
             this.panelRegreso.ResumeLayout(false);
             this.panelRegreso.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAsientos)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAsientosRegreso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dtgAsientos;
         private System.Windows.Forms.ComboBox cboDestinoFinal;
         private System.Windows.Forms.DateTimePicker dtpSalida;
         private System.Windows.Forms.Button btnSiguiente;
@@ -743,14 +810,19 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnBebeMasRegreso;
+        private System.Windows.Forms.Button btnBebeMenosRegreso;
+        private System.Windows.Forms.Button btnMenoresMasRegreso;
+        private System.Windows.Forms.Button btnMenoresMenosRegreso;
+        private System.Windows.Forms.Button btnAdultoMasRegreso;
+        private System.Windows.Forms.Button btnAdultoMenosRegreso;
+        private System.Windows.Forms.Label lblMenoresRegreso;
+        private System.Windows.Forms.Label lblBebesRegreso;
+        private System.Windows.Forms.Label lblAdultosRegreso;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dtgAsientos;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dtgAsientosRegreso;
     }
 }
