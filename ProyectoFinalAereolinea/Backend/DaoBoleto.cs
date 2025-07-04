@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using ProyectoFinalAereolinea.Backend;
 
 namespace ProyectoFinalAereolinea
 {
@@ -14,31 +14,27 @@ namespace ProyectoFinalAereolinea
         public string NumeroTicket { get; set; }
         public string Estado { get; set; } = "emitido";
         public string Asiento { get; set; }
-    }
 
-    public class DaoAsiento
-    {
-        private string connectionString = "server=localhost;database=aerolinea;uid=root;pwd=root;";
-
-        public List<string> ObtenerAsientosOcupados()
+        public void Guardar()
         {
-            List<string> ocupados = new List<string>();
-
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (var conn = Conexion.ObtenerConexion())
             {
                 conn.Open();
-                string query = "SELECT asiento FROM boletos WHERE estado = 'emitido'";
-
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                string sql = @"INSERT INTO Boletos (id_usuario, origen, destino, fecha, hora, asiento, estado, numero_ticket) 
+                               VALUES (@id_usuario, @origen, @destino, @fecha, @hora, @asiento, @estado, @numero_ticket)";
+                using (var cmd = new MySqlCommand(sql, conn))
                 {
-                    ocupados.Add(reader.GetString("asiento"));
+                    cmd.Parameters.AddWithValue("@id_usuario", IdUsuario);
+                    cmd.Parameters.AddWithValue("@origen", Origen);
+                    cmd.Parameters.AddWithValue("@destino", Destino);
+                    cmd.Parameters.AddWithValue("@fecha", Fecha);
+                    cmd.Parameters.AddWithValue("@hora", Hora);
+                    cmd.Parameters.AddWithValue("@asiento", Asiento);
+                    cmd.Parameters.AddWithValue("@estado", Estado);
+                    cmd.Parameters.AddWithValue("@numero_ticket", NumeroTicket);
+                    cmd.ExecuteNonQuery();
                 }
             }
-
-            return ocupados;
         }
     }
 }
